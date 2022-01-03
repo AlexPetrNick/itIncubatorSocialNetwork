@@ -1,0 +1,32 @@
+.wrapper__dialogs {
+  background-color: gray;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .dialogs__items {
+    display: flex;
+    flex-direction: column;
+    .dialog {
+      display: flex;
+      width: 400px;
+      height: 30px;
+      border:1px solid white;
+      margin-top: 10px;
+      .name{
+        width: 50px;
+        background-color: green;
+      }
+      .wrapper_message{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        .message {
+
+        }
+      }
+    }
+  }
+}
+
