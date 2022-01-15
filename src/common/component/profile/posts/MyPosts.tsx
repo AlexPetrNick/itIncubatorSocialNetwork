@@ -19,12 +19,10 @@ export const MyPosts:FC<MyPostsType> = (props) => {
     const addPost = () => {
         let text = newPostElement.current?.value
         if (text) props.dispatch(addPostAC())
-        props.dispatch(updateTitleProfileAC(''))
     }
 
     const onChangeText = (e:ChangeEvent<HTMLTextAreaElement>) => {
-        let text = newPostElement.current?.value
-        if (text) props.dispatch(updateTitleProfileAC(text))
+        props.dispatch(updateTitleProfileAC(e.currentTarget.value))
     }
 
     return (

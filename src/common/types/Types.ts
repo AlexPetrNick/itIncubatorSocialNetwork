@@ -4,9 +4,16 @@ export type PostDataType = {
     cntLike: number
 }
 export type DataTypes = {
+    id: string
     name: string
-    message: string
-    id: number
+}
+
+export type dialogPageType = {
+    dialogsData: Array<DataTypes>
+    messageData: {
+        [key: string]: Array<string>
+    },
+    newMessageText: string
 }
 
 export type stateType = {
@@ -14,7 +21,7 @@ export type stateType = {
         postData: Array<PostDataType>
         textPostProfileText: string
     }
-    dialogsData: Array<DataTypes>
+    dialogsPage: dialogPageType
 }
 
 export type rerenderEntireTreeType = (state:stateType, addPost:() => void) => void

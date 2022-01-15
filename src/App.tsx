@@ -9,7 +9,7 @@ import {BrowserRouter as Router,Routes, Route} from "react-router-dom";
 import {actionType, stateType} from "./common/types/Types";
 
 type AppData = {
-    state: stateType
+    store: stateType
     dispatch: (action:actionType) => void
 }
 
@@ -24,11 +24,16 @@ export const App: FC<AppData> = ({dispatch, ...props}) => {
                 <div className={"wrapper__content"}>
                     <NavBar/>
                     <Routes>
+                        <Route path="/" element={<Profile
+                            state={props.store}
+                            dispatch={dispatch}
+                            />} />
                         <Route path={'/dialogs'} element={<Dialogs
-                            state={props.state.dialogsData}
+                            state={props.store.dialogsPage}
+                            dispatch={dispatch}
                         />}/>
                         <Route path={'/profile'} element={<Profile
-                            state={props.state}
+                            state={props.store}
                             dispatch={dispatch}
                         />}/>
                     </Routes>
