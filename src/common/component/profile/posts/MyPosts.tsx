@@ -1,13 +1,13 @@
-import React, {ChangeEvent, ChangeEventHandler, FC, RefObject} from "react";
+import React, {ChangeEvent, FC, RefObject} from "react";
 import "../../../../style.css"
 import {Post} from "./post/Post";
-import {PostDataType} from "../../../types/Types";
+import {actionType, PostDataType} from "../../../types/Types";
+import {addPostAC, updateTitleProfileAC} from "../../../redux/state";
 
 type MyPostsType = {
     postData: Array<PostDataType>
-    addPost: () => void
     textPostProfileText: string
-    updateTextProfile: (newText:string) => void
+    dispatch: (action:actionType) => void
 }
 
 export const MyPosts:FC<MyPostsType> = (props) => {
@@ -18,13 +18,13 @@ export const MyPosts:FC<MyPostsType> = (props) => {
 
     const addPost = () => {
         let text = newPostElement.current?.value
-        if (text) props.addPost()
-        props.updateTextProfile('')
+        if (text) props.dispatch(addPostAC())
+        props.dispatch(updateTitleProfileAC(''))
     }
 
     const onChangeText = (e:ChangeEvent<HTMLTextAreaElement>) => {
         let text = newPostElement.current?.value
-        if (text) props.updateTextProfile(text)
+        if (text) props.dispatch(updateTitleProfileAC(text))
     }
 
     return (

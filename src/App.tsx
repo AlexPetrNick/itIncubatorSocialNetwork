@@ -6,17 +6,15 @@ import {NavBar} from "./common/component/navbar/NavBar";
 import {Profile} from "./common/component/profile/Profile";
 import {Dialogs} from "./common/component/dialogs/Dialogs";
 import {BrowserRouter as Router,Routes, Route} from "react-router-dom";
-import {stateType} from "./common/types/Types";
-import {updateTextProfile} from "./common/redux/state";
+import {actionType, stateType} from "./common/types/Types";
 
 type AppData = {
     state: stateType
-    addPost: () => void
-    updateTextProfile: (newText:string) => void
+    dispatch: (action:actionType) => void
 }
 
 
-export const App: FC<AppData> = (props) => {
+export const App: FC<AppData> = ({dispatch, ...props}) => {
 
 
     return (
@@ -31,8 +29,7 @@ export const App: FC<AppData> = (props) => {
                         />}/>
                         <Route path={'/profile'} element={<Profile
                             state={props.state}
-                            addPost={props.addPost}
-                            updateTextProfile={props.updateTextProfile}
+                            dispatch={dispatch}
                         />}/>
                     </Routes>
                 </div>

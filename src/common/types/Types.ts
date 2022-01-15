@@ -1,5 +1,5 @@
 export type PostDataType = {
-    id: number
+    id: string
     content: string
     cntLike: number
 }
@@ -18,3 +18,9 @@ export type stateType = {
 }
 
 export type rerenderEntireTreeType = (state:stateType, addPost:() => void) => void
+
+
+export type actionType = {
+    type: string
+    title?: string
+}
