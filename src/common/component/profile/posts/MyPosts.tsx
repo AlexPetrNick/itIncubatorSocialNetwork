@@ -2,7 +2,7 @@ import React, {ChangeEvent, FC, RefObject} from "react";
 import "../../../../style.css"
 import {Post} from "./post/Post";
 import {actionType, PostDataType} from "../../../types/Types";
-import {addPostAC, updateTitleProfileAC} from "../../../redux/state";
+import {addPostAC, updateTitleProfileAC} from "../../../redux/reducers/profileDataReducer";
 
 type MyPostsType = {
     postData: Array<PostDataType>

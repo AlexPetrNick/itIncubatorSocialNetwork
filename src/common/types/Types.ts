@@ -16,11 +16,13 @@ export type dialogPageType = {
     newMessageText: string
 }
 
+export type profileDataType = {
+    postData: Array<PostDataType>
+    textPostProfileText: string
+}
+
 export type stateType = {
-    profileData: {
-        postData: Array<PostDataType>
-        textPostProfileText: string
-    }
+    profileData: profileDataType
     dialogsPage: dialogPageType
 }
 
