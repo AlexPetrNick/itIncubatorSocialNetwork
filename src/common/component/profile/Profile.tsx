@@ -3,6 +3,7 @@ import "../../../style.css"
 import {MyPosts} from "./posts/MyPosts";
 import {ProfileInfo} from "./profileInfo/ProfileInfo";
 import {actionType, PostDataType, stateType} from "../../types/Types";
+import MyPostsContainer from "./posts/MyPostsContainer";
 
 
 export type ProfileType = {
@@ -10,15 +11,11 @@ export type ProfileType = {
     dispatch: (action:actionType) => void
 }
 
-export const Profile:FC<ProfileType> = ({dispatch, ...props}) => {
+export const Profile:FC = () => {
     return (
         <div className={"content"}>
             <ProfileInfo />
-            <MyPosts
-                postData={props.state.profileData.postData}
-                textPostProfileText={props.state.profileData.textPostProfileText}
-                dispatch={dispatch}
-            />
+            <MyPostsContainer />
         </div>
     )
 }

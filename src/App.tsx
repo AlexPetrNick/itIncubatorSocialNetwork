@@ -4,9 +4,10 @@ import './style.css'
 import {Header} from "./common/component/header/Header";
 import {NavBar} from "./common/component/navbar/NavBar";
 import {Profile} from "./common/component/profile/Profile";
-import {Dialogs} from "./common/component/dialogs/Dialogs";
-import {BrowserRouter as Router,Routes, Route} from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import {actionType, stateType} from "./common/types/Types";
+import DialogsContainer from "./common/component/dialogs/DialogsContainer";
+import {Users} from "./common/component/users/Users";
 
 type AppData = {
     store: stateType
@@ -14,7 +15,7 @@ type AppData = {
 }
 
 
-export const App: FC<AppData> = ({dispatch, ...props}) => {
+export const App: FC = () => {
 
 
     return (
@@ -25,17 +26,12 @@ export const App: FC<AppData> = ({dispatch, ...props}) => {
                     <NavBar/>
                     <Routes>
                         <Route path="/" element={<Profile
-                            state={props.store}
-                            dispatch={dispatch}
                             />} />
-                        <Route path={'/dialogs'} element={<Dialogs
-                            state={props.store.dialogsPage}
-                            dispatch={dispatch}
+                        <Route path={'/dialogs'} element={<DialogsContainer
                         />}/>
                         <Route path={'/profile'} element={<Profile
-                            state={props.store}
-                            dispatch={dispatch}
                         />}/>
+                        <Route path={'/users'} element={<Users />} />
                     </Routes>
                 </div>
             </div>

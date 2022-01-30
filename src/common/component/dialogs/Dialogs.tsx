@@ -8,7 +8,8 @@ import {sendMessage, updateNewMessageBody} from "../../redux/reducers/dialogsPag
 
 type DialogsType = {
     state: dialogPageType
-    dispatch: (action:actionType) => void
+    sendMessage: () => void
+    updateNewMessageBody: (title:string) => void
 }
 
 export const Dialogs: FC<DialogsType> = (props) => {
@@ -26,11 +27,11 @@ export const Dialogs: FC<DialogsType> = (props) => {
     })
 
     const onMessageInputChange = (e:ChangeEvent<HTMLInputElement>) => {
-        props.dispatch(updateNewMessageBody(e.target.value))
+        props.updateNewMessageBody(e.target.value)
     }
 
     const onButtonSendClick = () => {
-        if (textDialog) props.dispatch(sendMessage())
+        if (textDialog) props.sendMessage()
     }
 
     return (

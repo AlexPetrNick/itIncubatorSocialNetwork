@@ -1,5 +1,6 @@
 import {Reducer} from "react";
 import {actionType, dialogPageType, stateType} from "../../types/Types";
+import {store} from "../state";
 
 const randomText = (array: Array<string>, num: number) => {
     const randNum = Math.floor(Math.random() * num)
@@ -13,7 +14,7 @@ export const updateNewMessageBody = (title: string) => ({type: UPDATE_NEW_MESSAG
 export const sendMessage = () => ({type: SEND_MESSAGE})
 
 
-export const dialogsPageReducer: Reducer<dialogPageType, actionType> = (state, action): dialogPageType => {
+export const dialogsPageReducer: Reducer<dialogPageType, actionType> = (state=store.getState().dialogsPage, action): dialogPageType => {
     switch (action.type) {
         case UPDATE_NEW_MESSAGE_BODY: {
             const text = action.title ? action.title : ''

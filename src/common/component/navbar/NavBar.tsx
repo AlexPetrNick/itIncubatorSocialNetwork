@@ -19,6 +19,10 @@ export const NavBar: FC = () => {
                 <a href="">Other point</a>
             </div>
 
+            <div>
+                <NavLink to="/users">Find Users</NavLink>
+            </div>
+
             <div className={"setting"}>
                 <a href="">Setting</a>
             </div>

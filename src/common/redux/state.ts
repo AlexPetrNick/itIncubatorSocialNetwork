@@ -51,6 +51,40 @@ export const store = {
                 [four]: ["Bye"],
             },
             newMessageText: ''
+        },
+        usersPage: {
+            users: [
+                {
+                    id:1,
+                    followed:false,
+                    fullName: 'Alexander Petrov',
+                    status: 'yes boss',
+                    location: {
+                        city: 'Izh',
+                        country:'Russia'
+                    }
+                },
+                {
+                    id:2,
+                    followed:false,
+                    fullName: 'Alexander Ivanov',
+                    status: 'yes boss 2',
+                    location: {
+                        city: 'Izh',
+                        country:'Russia'
+                    }
+                },
+                {
+                    id:3,
+                    followed:false,
+                    fullName: 'Alexander Sidovor',
+                    status: 'yes boss 3',
+                    location: {
+                        city: 'Moscow',
+                        country:'Russia'
+                    }
+                }
+            ]
         }
     } as stateType,
     _callSubscribers(state:stateType){

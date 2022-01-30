@@ -7,7 +7,8 @@ import {addPostAC, updateTitleProfileAC} from "../../../redux/reducers/profileDa
 type MyPostsType = {
     postData: Array<PostDataType>
     textPostProfileText: string
-    dispatch: (action:actionType) => void
+    addPost: () => void
+    updateTitleProfile: (title:string) => void
 }
 
 export const MyPosts:FC<MyPostsType> = (props) => {
@@ -18,11 +19,11 @@ export const MyPosts:FC<MyPostsType> = (props) => {
 
     const addPost = () => {
         let text = newPostElement.current?.value
-        if (text) props.dispatch(addPostAC())
+        if (text) props.addPost()
     }
 
     const onChangeText = (e:ChangeEvent<HTMLTextAreaElement>) => {
-        props.dispatch(updateTitleProfileAC(e.currentTarget.value))
+        props.updateTitleProfile(e.currentTarget.value)
     }
 
     return (
