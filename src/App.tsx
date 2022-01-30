@@ -7,11 +7,11 @@ import {Profile} from "./common/component/profile/Profile";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import {actionType, stateType} from "./common/types/Types";
 import DialogsContainer from "./common/component/dialogs/DialogsContainer";
-import {Users} from "./common/component/users/Users";
+import UsersContainer from "./common/component/users/UsersContainer";
 
 type AppData = {
     store: stateType
-    dispatch: (action:actionType) => void
+    dispatch: (action: actionType) => void
 }
 
 
@@ -26,12 +26,12 @@ export const App: FC = () => {
                     <NavBar/>
                     <Routes>
                         <Route path="/" element={<Profile
-                            />} />
+                        />}/>
                         <Route path={'/dialogs'} element={<DialogsContainer
                         />}/>
                         <Route path={'/profile'} element={<Profile
                         />}/>
-                        <Route path={'/users'} element={<Users />} />
+                        <Route path={'/users'} element={<UsersContainer/>}/>
                     </Routes>
                 </div>
             </div>
