@@ -25,6 +25,7 @@ type mapStateToPropsTypes = {
     users:userDataType
 }
 const mapStateToProps = (state:stateTypeFromStore):mapStateToPropsTypes => {
+    console.log(state)
     return {
         users:state.userDataPage
     }

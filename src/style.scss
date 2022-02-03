@@ -81,3 +81,18 @@ body {
   background-color: gray;
   width: 500px;
 }
+
+.wrapper__users__list {
+  display: flex;
+  width: 300px;
+  border: 2px solid red;
+  .wrapper__photo_bt {
+
+  }
+  .wrapper__content {
+    display: block;
+    align-content: baseline;
+    backdrop-filter: blur();
+  }
+}
+
